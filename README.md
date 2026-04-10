@@ -1,5 +1,7 @@
 # Cloudcore CMS
 
+![CI](https://github.com/cloudcore-cms/cloudcore-cms/actions/workflows/ci.yml/badge.svg)
+
 A headless CMS built on Cloudflare Workers. Block-based content model, admin dashboard, 5 auth methods, enterprise-grade security. Runs on Cloudflare's free tier.
 
 [![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cloudcore-cms/cloudcore-cms)

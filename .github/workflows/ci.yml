@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  cms:
+    name: CMS API
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: TypeScript check
+        run: npm run typecheck
+      - name: Security audit
+        run: npm audit --audit-level=high
+      - name: Build check
+        run: npm run build
+
+  admin:
+    name: Admin UI
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install dependencies
+        run: npm ci
+        working-directory: admin
+      - name: TypeScript check
+        run: npx tsc --noEmit
+        working-directory: admin
+      - name: Build
+        run: npm run build
+        working-directory: admin
