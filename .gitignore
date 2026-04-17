@@ -33,3 +33,8 @@ Thumbs.db
 # Logs
 *.log
 npm-debug.log*
+
+# Claude Code project files
+CLAUDE.md
+.claude/
+tasks/

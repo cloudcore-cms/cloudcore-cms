@@ -11,7 +11,9 @@
     "db:migrate": "wrangler d1 migrations apply cloudcore-db --local",
     "db:migrate:prod": "wrangler d1 migrations apply cloudcore-db --remote",
     "db:studio": "drizzle-kit studio",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "dependencies": {
     "@hono/zod-validator": "^0.4.0",
@@ -23,6 +25,7 @@
     "@cloudflare/workers-types": "^4.20241127.0",
     "drizzle-kit": "^1.0.0-beta.20",
     "typescript": "^5.6.0",
+    "vitest": "^4.1.4",
     "wrangler": "^4.81.0"
   }
 }
